@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Torrejon Miguel Angel - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .server-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 12px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            animation: progressBar 2s ease-out;
+        }
+
+        .project {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateX(10px);
+        }
+
+        .project h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-item .icon {
+            margin-right: 10px;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes progressBar {
+            from {
+                width: 0%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">MT</div>
+            <h1>Mauricio Torrejon Miguel Angel</h1>
+            <p class="subtitle">Estudiante de Ingeniería en Tecnologías de la Información y Seguridad</p>
+            <p style="color: #667eea; font-weight: 600; margin-top: 10px;">Universidad San Francisco Xavier de Chuquisaca (USFX)</p>
+            <div class="server-info">🚀 Publicado en XAMPP/Apache y modificado con FTP</div>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2><span class="icon">📚</span>Información Académica</h2>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h3 style="color: #667eea; font-size: 1.5em; margin-bottom: 10px;">Universidad San Francisco Xavier de Chuquisaca</h3>
+                    <p style="font-size: 1.1em; color: #2c3e50;"><strong>USFX - Chuquisaca</strong></p>
+                </div>
+                <hr style="margin: 20px 0; border: 1px solid #ecf0f1;">
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 15px 0;">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">📖 Materia:</h4>
+                    <p style="font-size: 1.2em; font-weight: 600; color: #2c3e50;">Servicios de Internet/Intranet</p>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 15px 0;">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">👨‍🏫 Docente:</h4>
+                    <p style="font-size: 1.2em; font-weight: 600; color: #2c3e50;">Ing. Marco Antonio Arenas Porcel</p>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 15px 0;">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">🎓 Carrera:</h4>
+                    <p style="font-size: 1.1em; color: #2c3e50;">Ingeniería en Tecnologías de la Información y Seguridad</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🛠️</span>Tecnologías</h2>
+                <p><strong>Lenguajes de Programación:</strong> HTML5, CSS3, JavaScript, PHP, Python, Java</p>
+                <p><strong>Bases de Datos:</strong> MySQL, PostgreSQL, MongoDB</p>
+                <p><strong>Servidores:</strong> Apache, XAMPP, Linux</p>
+                <p><strong>Herramientas:</strong> Git, VS Code, Wireshark, Nmap</p>
+                <p><strong>Frameworks:</strong> Bootstrap, Laravel, Django</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📞</span>Contacto</h2>
+                <div class="contact-info">
+                    <a href="mailto:mauricio@ejemplo.com" class="contact-item">
+                        <span class="icon">📧</span> Email
+                    </a>
+                    <a href="https://linkedin.com/in/mauricio-torrejon" class="contact-item" target="_blank">
+                        <span class="icon">💼</span> LinkedIn
+                    </a>
+                    <a href="https://github.com/mauricio-torrejon" class="contact-item" target="_blank">
+                        <span class="icon">💻</span> GitHub
+                    </a>
+                    <a href="tel:+1234567890" class="contact-item">
+                        <span class="icon">📱</span> Teléfono
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Mauricio Torrejon Miguel Angel. Todos los derechos reservados.</p>
+            <p>Proyecto académico para la materia <strong>Servicios de Internet/Intranet</strong></p>
+            <p><strong>Docente:</strong> Ing. Marco Antonio Arenas Porcel | <strong>USFX - Chuquisaca</strong></p>
+            <p>Desarrollado con ❤️ usando HTML5, CSS3 y JavaScript</p>
+            <p><strong>Servidor:</strong> Apache en XAMPP | <strong>Estado:</strong> Online ✅</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animación suave al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Efecto de escritura en el título
+            const title = document.querySelector('h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
